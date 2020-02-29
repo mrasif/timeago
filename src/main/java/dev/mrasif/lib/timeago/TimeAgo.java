@@ -21,6 +21,20 @@ public class TimeAgo {
      *
      * @param parseFormat string simpleDateFormat
      * @param pastDate string timestamp
+     * @return string result
+     * @throws ParseException date parse exception
+     */
+    public static final String format(String parseFormat, String pastDate) throws ParseException {
+        SimpleDateFormat simpleDateFormat=new SimpleDateFormat(parseFormat);
+        Date past=simpleDateFormat.parse(pastDate);
+        Date now=new Date();
+        return past!=null?format(past,now):null;
+    }
+
+    /**
+     *
+     * @param parseFormat string simpleDateFormat
+     * @param pastDate string timestamp
      * @param currentDate string timestamp
      * @return string result
      * @throws ParseException date parse exception
