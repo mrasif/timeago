@@ -149,6 +149,18 @@ public class TimeAgoTest {
         assertThat("2 seconds ago",is(status));
     }
 
+    @Test
+    public void format_date_only_past_parse_test() throws Exception{
+        String status=TimeAgo.format("dd/MM/yyyy hh:mm:ss","29/02/2020 17:23:44");
+        assertNotNull(status);
+    }
+
+    @Test(expected = ParseException.class)
+    public void format_date_only_past_parse_test_with_invalid_format() throws Exception{
+        String status=TimeAgo.format("dd/MM/yyyy-hh:mm:ss","29/02/2020 17:23:44");
+        assertNotNull(status);
+    }
+
     @After
     public void tearDown() throws Exception {
         format=null;
