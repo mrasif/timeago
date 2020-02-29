@@ -70,7 +70,7 @@ String words=TimeAgo.format(past)
 String words=TimeAgo.format("dd/MM/yyyy hh:mm:ss","28/01/2019 17:23:46")
 ```
 
-**2. It will calculate difference form another timestamp.**
+**3. It will calculate difference form another timestamp.**
 
 ```java
 SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
@@ -79,10 +79,28 @@ Date now = format.parse("29/02/2020 17:23:46");
 String words=TimeAgo.format(past)
 ```
 
-**1. It will also calculate difference form another timestamp.**
+**4. It will also calculate difference form another timestamp.**
 
 ```java
 String words=TimeAgo.format("dd/MM/yyyy hh:mm:ss","28/01/2019 17:23:46","29/02/2020 17:23:46")
+```
+
+### Output be like:
+
+```text
+a moment ago
+a second ago
+2 seconds ago
+a minute ago
+5 minutes ago
+an hour ago
+2 hours ago
+yesterday
+2 days ago
+a month ago
+3 months ago
+a year ago
+2 years ago
 ```
 
 Now you can enjoy this features.
